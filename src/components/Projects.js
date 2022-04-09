@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import sanityClient from '../client';
 
 export default function Project() {
@@ -18,7 +17,7 @@ export default function Project() {
             tags
         }`
             )
-            .then((data) => setProjectData(data))
+            .then((data) => setProjectData(data)) 
             .catch(console.error);
     }, []);
 
@@ -50,7 +49,7 @@ export default function Project() {
                                         <strong className="font-bold">
                                             Finished on
                                         </strong>
-                                        :{''}
+                                        :{' '}
                                         {new Date(
                                             project.date
                                         ).toLocaleDateString()}
@@ -59,14 +58,14 @@ export default function Project() {
                                         <strong className="font-bold">
                                             Company
                                         </strong>
-                                        :{''}
+                                        :{' '}
                                         {project.place}
                                     </span>
                                     <span>
                                         <strong className="font-bold">
                                             Type
                                         </strong>
-                                        :{''}
+                                        :{' '}
                                         {project.projectType}
                                     </span>
                                     <p className="my-6 text-lg text-gray-700 leading-relaxed">
@@ -78,7 +77,7 @@ export default function Project() {
                                         rel="noopener noreferrer"
                                         className="text-red-500 font-bold hover:underline hover:text-red-400"
                                     >
-                                        View the Project{''}
+                                        View the Project{' '}
                                         <span
                                             role="img"
                                             aria-label="right pointer"
