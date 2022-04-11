@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import sanityClient from '../client';
+import imageUrlBuilder from '@sanity/image-url';
 import image from '../shootingstar2.jpg';
-import BlockContent from "@sanity/block-content-to-react";
+import BlockContent from '@sanity/block-content-to-react';
 
-// const builder = imageUrlBuilder(sanityClient)
+const builder = imageUrlBuilder(sanityClient);
 
-// function urlFor(source) {
-//   return builder.image(source)
-// }
+function urlFor(source) {
+    return builder.image(source);
+}
 
 export default function About() {
     const [author, setAuthor] = useState(null);
@@ -33,8 +34,8 @@ export default function About() {
             <div className="p-10 lg:pt-48 container mx-auto relative">
                 <section className="bg-green-800 rounded=lg shadow-2xl lg:flex p-20">
                     <img
-                        src={author.authorImage}
                         className="rounded w-32 h-32 lg:w-64 lg:h-64 mr-8"
+                        src={urlFor(author.authorImage).url()}
                         alt={author.name}
                     />
                     <div className="text-lg flex flex-col justify-center">

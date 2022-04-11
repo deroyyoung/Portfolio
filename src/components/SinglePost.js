@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import sanityClient from '../client';
+import imageUrlBuilder from '@sanity/image-url'
 import { useParams } from 'react-router-dom';
 import BlockContent from '@sanity/block-content-to-react';
 
-// const builder = imageUrlBuilder(sanityClient)
+const builder = imageUrlBuilder(sanityClient)
 
-// function urlFor(source) {
-//   return builder.image(source)
-// }
+function urlFor(source) {
+  return builder.image(source)
+}
 
 export default function SinglePost() {
     const [singlePost, setSinglePost] = useState(null);
@@ -48,7 +49,7 @@ export default function SinglePost() {
                             </h1>
                             <div className="flex justify-center text-gray-800">
                                 <img
-                                    // src={urlFor(singlePost.authorImage).url()}
+                                    src={urlFor(singlePost.authorImage).url()}
                                     alt={singlePost.name}
                                     className="w-10 h-10 rounded-full"
                                 />
