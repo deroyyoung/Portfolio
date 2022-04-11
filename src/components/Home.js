@@ -9,11 +9,14 @@ export default function Home() {
                 alt="Shooting Star over lake"
                 className="absolute object-cover w-full h-full"
             />
-            <section className="relative flex justify-center min-h-screen pt-12 lg:pt-64 px-8">
-                <h1 className="text-6xl text-green-100 font-bold cursive leading-none lg: leading-snug home-name">
+            <section className="relative flex flex-col  justify-center min-h-screen pt-12 lg:pt-64 px-8">
+                <h1 className="text-6xl text-white text-center font-bold cursive leading-none lg: leading-snug home-name">
                     {' '}
                     Hello, I`m Deroy.
                 </h1>
+                <h2 className='text-5xl text-white  text-center cursive '>
+                    A Full Stack Javascript Developer.
+                </h2>
             </section>
         </main>
     );
